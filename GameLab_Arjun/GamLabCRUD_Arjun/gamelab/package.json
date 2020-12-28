@@ -1,0 +1,25 @@
+{
+  "name": "gamelab",
+  "version": "1.0.0",
+  "description": "This is a game library review system",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "architecture",
+    "constraints"
+  ],
+  "author": "Arjun",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
