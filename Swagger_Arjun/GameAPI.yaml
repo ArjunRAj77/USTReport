@@ -1,0 +1,162 @@
+swagger: "2.0"
+
+info: 
+  version: "0.0.1"
+  title: Game Library API
+  description: This specification is for the game library information. By using this API we can get different details of games stored in the library.
+  
+  contact:
+    name: GameLab
+    url: https://gamelabfunctionapp.z7.web.core.windows.net/
+    email: admin@gamelab.com
+  
+  license:
+    name: GameLab
+    url: https://gamelabfunctionapp.z7.web.core.windows.net/
+    
+host : localhost:3000
+basePath: /v1/
+schemes:
+ - http
+ - https
+ 
+consumes:
+ - application/json
+#format of the responses to the client
+produces:
+ - application/json
+ 
+tags:
+ - name: "GameInfo"
+   description : refer to the api documentation for game information
+ 
+ - name: "Game Review Update"
+   description : refer to the api documentation for game review update
+   
+ - name: "Game list"
+   description : refer to the api documentation for game library list
+   
+definitions:
+  GeneralError:
+    required:
+     - message
+    properties:
+      message:
+        type: string
+        
+        
+  NotFoundError:
+    required:
+     - message
+     - hint
+    properties:
+      message:
+        type: string
+      hint:
+        type: string
+  
+ 
+path:
+  /GameInfo:
+        #GameLab Library System
+        GameInformation:
+             required:
+                  - name
+                  - description
+                  - type
+                  - intialReleaseDate
+                  - awards
+                  - destination
+                  - gamePlatforms
+                  - developers
+                  - rating
+                  - pricePP
+                  - soldout
+                  - offer
+                  - validTill
+        properties:
+              name:
+                type: string
+              description:
+                type: string
+              type:
+                type: string
+              awards:
+                type: string
+                enum:
+                  - awardTitle
+                  - awardYear
+              gamePlatform:
+                type: string
+                enum:
+                  - platform
+              rating:
+                type: number
+              validTill:
+                type: number
+              offer:
+                type: number
+              pricePP:
+                type: number
+              soldout:
+                type: boolean
+#parameter Definitions
+#common paramers used int he operations
+parameters:
+  IdInPath:
+    name: id
+    in: path
+    type: string
+    required: true
+    
+#security definitions
+securityDefinitions:
+  KeySecurity:
+    type: apiKey
+    in: query
+    name: api_key
+
+
+    
+        
+        
+        
+        
+        
+          
+          
+          
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
